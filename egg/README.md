@@ -31,3 +31,15 @@ $ npm stop
 
 
 [egg]: https://eggjs.org
+
+# Service 封装的一个抽象层，数据库交互的代码
+- 保持Controller 逻辑更加简单
+- 保持业务逻辑的独立性，Service 可被多个Controller调用
+- 写测试用例简单
+# Controller 
+
+## 服务端渲染
+- 多SEO 非常友好
+- Egg 后端的一致性认可
+- 中台 一次登录 SPA
+

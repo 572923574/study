@@ -1,16 +1,23 @@
-'use strict';
+"use strict";
 
-const { Controller } = require('egg');
+const { Controller } = require("egg");
 
 class HomeController extends Controller {
   async index() {
     const { ctx } = this;
-    ctx.body = 'hi, lijianguo,egg';
+    ctx.body = "hi, lijianguo,egg";
   }
 
   async lijianguo() {
     const { ctx } = this;
-    ctx.body = '<h1>hi, lijianguo,egg</h1>';
+    ctx.body = "<h1>hi, lijianguo,egg</h1>";
+  }
+
+  async testGetGirl() {
+    const { ctx } = this;
+    let id = ctx.query.id;
+    const res = await ctx.service.lijianguo.getGirl(id);
+    ctx.body = res;
   }
 }
 

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/public/css/default.css">
+  <title>Document</title>
+
+</head>
+<body>
+  <div>
+    <%= nowTime %>
+    <button onclick="add()">增加cookie</button>
+    <button onclick="del()">删除cookie</button>
+    <button onclick="update()">修改cookie</button>
+    <button onclick="query()">查看cookie</button>
+
+  </div>
+  <h2>编号<%= id%></h2>
+  <h3>姓名<%= name%>,年龄<%= age%>岁,技能
+    <% for(var i=0;i<skills.length;i++){ %>
+    <span><%= skills[i]%></span>
+    <%}%>
+  </h3>
+  <script>
+    function add(){
+      fetch("/add",{
+        method:"post",
+        headers:{
+          "Content-type":"application/json"
+        }
+      })
+    }
+    function del(){
+      fetch("/del",{
+        method:"post",
+        headers:{
+          "Content-type":"application/json"
+        }
+      })
+    }
+    function update(){
+      fetch("/update",{
+        method:"post",
+        headers:{
+          "Content-type":"application/json"
+        }
+      })
+    }
+    function query(){
+      fetch("/query",{
+        method:"post",
+        headers:{
+          "Content-type":"application/json"
+        }
+      })
+    }
+  </script>
+</body>
+</html>
